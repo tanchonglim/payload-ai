@@ -23,12 +23,14 @@ export const InstructionsContext = createContext(initialContext)
 
 export const InstructionsProvider: React.FC = ({ children }: { children: React.ReactNode }) => {
   const [instructions, setInstructionsState] = useState({})
+  const config = useConfig()
 
-  const { config } = useConfig()
-  const {
-    routes: { api },
-    serverURL,
-  } = config
+  if (!config) {
+    return null // or a loading indicator
+  }
+
+  const { routes, serverURL } = config.config
+  const { api } = routes
 
   // This is here because each field have separate instructions and
   // their ID is needed to edit them for Drawer

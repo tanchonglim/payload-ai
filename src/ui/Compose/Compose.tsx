@@ -44,7 +44,6 @@ export const Compose: FC<ComposeProps> = ({ descriptionProps, instructionId }) =
   const {
     field: { type: fieldType },
     path: pathFromContext,
-    schemaPath,
   } = descriptionProps || ({} as FieldDescriptionServerProps)
   const { editor: lexicalEditor, editorContainerRef } = useEditorConfigContext()
 
@@ -65,7 +64,7 @@ export const Compose: FC<ComposeProps> = ({ descriptionProps, instructionId }) =
       actionsRef.current.setAttribute('for', fieldId)
       setInput(inputElement)
     }
-  }, [pathFromContext, schemaPath, actionsRef, editorContainerRef])
+  }, [pathFromContext, actionsRef, editorContainerRef])
 
   // Show or hide actions menu on field
   useEffect(() => {

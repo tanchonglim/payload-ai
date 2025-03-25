@@ -1,6 +1,5 @@
-import type * as ElevenLabs from 'elevenlabs/api'
 
-import { ElevenLabsClient } from 'elevenlabs'
+import {type ElevenLabs, ElevenLabsClient } from 'elevenlabs'
 
 type ElevenLabsTextToSpeechOptions = {
   voice_id: string

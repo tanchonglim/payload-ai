@@ -10,7 +10,7 @@ import { Compose } from '../../ui/Compose/Compose.js'
 
 export const ComposeField = (props: FieldDescriptionServerProps) => {
   const { id: instructionId } = useInstructions({
-    schemaPath: props?.schemaPath,
+    schemaPath: (props as any)?.schemaPath,
   })
 
   return (
@@ -18,7 +18,7 @@ export const ComposeField = (props: FieldDescriptionServerProps) => {
       context={{
         type: props?.field.type,
         path: props?.path,
-        schemaPath: props?.schemaPath,
+        schemaPath: (props as any)?.schemaPath,
       }}
     >
       <Compose descriptionProps={props as any} instructionId={instructionId} />

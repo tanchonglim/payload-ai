@@ -8,7 +8,10 @@ import styles from './menu.module.scss'
 export const TranslateMenu = ({ onClick }) => {
   const [show, setShow] = useState(false)
 
-  const filteredLocales = locales.all.filter((a) => {
+  const filteredLocales = [
+    locales.getByTag('en-my'),
+    locales.getByTag('ms-my'),
+  ].filter((a) => {
     return a.tag && a.location
   })
 
@@ -31,7 +34,7 @@ export const TranslateMenu = ({ onClick }) => {
           setShow(!show)
         }}
         onMouseEnter={() => setShow(true)}
-       />
+      />
       <div className={styles.hoverMenu} data-show={show}>
         <div className={`${styles.menu} ${styles.subMenu}`}>
           <Item

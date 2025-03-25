@@ -4,7 +4,7 @@ import type { CSSProperties, MouseEventHandler } from 'react'
 
 export interface PluginConfig {
   collections: {
-    [key: string]: boolean
+    [key: string]: string[]
   }
   debugging?: boolean
   disableSponsorMessage?: boolean

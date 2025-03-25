@@ -5,7 +5,7 @@ interface UpdateFieldsConfig {
   updatedCollectionConfig: CollectionConfig
 }
 
-export const updateFieldsConfig = (collectionConfig: CollectionConfig): UpdateFieldsConfig => {
+export const updateFieldsConfig = (collectionConfig: CollectionConfig, fields: string[]): UpdateFieldsConfig => {
   let schemaPathMap = {}
 
   function updateField(field: any, parentPath = ''): any {
@@ -17,7 +17,8 @@ export const updateFieldsConfig = (collectionConfig: CollectionConfig): UpdateFi
       field.admin?.disabled ||
       field.admin?.readOnly ||
       field.admin?.hidden ||
-      field.type === 'row'
+      field.type === 'row' ||
+      !fields.includes(field.name)
     ) {
       return field
     }

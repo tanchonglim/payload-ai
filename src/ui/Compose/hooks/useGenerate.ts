@@ -100,7 +100,7 @@ export const useGenerate = ({ instructionId }: { instructionId: string }) => {
     requestAnimationFrame(() => {
       const validateObject = memoizedSchema.validate(object)
       if (validateObject?.success) {
-        setSafeLexicalState(object, editor)
+        setSafeLexicalState(object, editor as any)
       }
     })
   }, [object, editorSchema])

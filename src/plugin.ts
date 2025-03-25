@@ -88,8 +88,8 @@ const payloadAiPlugin =
       updatedConfig = {
         ...incomingConfig,
         collections: collections.map((collection) => {
-          if (collectionSlugs[collection.slug]) {
-            const { schemaPathMap, updatedCollectionConfig } = updateFieldsConfig(collection)
+          if (collectionSlugs[collection.slug]?.length > 0) {
+            const { schemaPathMap, updatedCollectionConfig } = updateFieldsConfig(collection, collectionSlugs[collection.slug] as string[])
             collectionsFieldPathMap = {
               ...collectionsFieldPathMap,
               ...schemaPathMap,

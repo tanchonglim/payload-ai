@@ -49,9 +49,9 @@ export const useInstructions = (
 
   return {
     ...context,
-    ...(context.instructions[schemaPath] || {}),
+    ...(context?.instructions ? context?.instructions[schemaPath] : {}),
     fields,
-    map: context.instructions,
+    map: context?.instructions,
     promptEditorSuggestions,
   }
 }
