@@ -9,9 +9,6 @@ export const ComposeFeatureComponent = (props: any) => {
     schemaPath: props?.clientProps?.schemaPath,
   })
 
-  console.warn('props',props)
-  console.warn('instructionId',instructionId)
-
   return (
     <FieldProvider
       context={{
