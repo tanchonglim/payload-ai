@@ -7,6 +7,8 @@ export const ComposeFeatureComponent = (props)=>{
     const { id: instructionId } = useInstructions({
         schemaPath: props?.clientProps?.schemaPath
     });
+    console.warn('props', props);
+    console.warn('instructionId', instructionId);
     return /*#__PURE__*/ _jsx(FieldProvider, {
         context: {
             type: props?.clientProps?.field?.type,
